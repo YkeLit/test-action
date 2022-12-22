@@ -13,7 +13,9 @@ runs:
         version: ${{ inputs.version }}
 
     - name: check chart lint
-      run: helm lint
+      run: |
+        helm lint
 
     - name: dry run chart
-      run: helm install test . --dry-run
+      run: |
+        helm install test . --dry-run
