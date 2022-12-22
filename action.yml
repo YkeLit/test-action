@@ -6,6 +6,7 @@ inputs:
     required: false
     default: latest
 runs:
+  using: 'composite'
   steps:
     # 使用一个开源的k3s actions
     - uses: debianmaster/actions-k3s@master
