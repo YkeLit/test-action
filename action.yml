@@ -1,12 +1,16 @@
-name: 'helm chart lint and dry run'
-
+name: 'chart lint'
+description: helm chart lint and dry run
+inputs: 
+  version: 
+    description: "set k3s version"
+    required: false
+    default: latest
 runs:
   setup:
     # 使用一个开源的k3s actions
     - uses: debianmaster/actions-k3s@master
-      id: k3s
       with:
-        version: 'latest'
+        version: ${{ inputs.version }}
 
     - name: check chart lint
       run: helm lint
