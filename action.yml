@@ -1,0 +1,8 @@
+name: 'helm chart lint and dry run'
+
+runs:
+  - uses: debianmaster/actions-k3s@master
+    with:
+      version: 'latest'
+  - run: helm lint
+  - run: helm install test . --dry-run
