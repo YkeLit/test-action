@@ -9,7 +9,7 @@ runs:
   using: 'composite'
   steps:
     # 使用一个开源的k3s actions
-    - uses: debianmaster/actions-k3s@dependabot/npm_and_yarn/actions/core-1.9.1
+    - uses: debianmaster/actions-k3s@master
       with:
         version: ${{ inputs.version }}
 
